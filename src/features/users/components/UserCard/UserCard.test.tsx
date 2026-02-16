@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import type { UserProfile } from "../../types";
+import { createMockUser } from "@/test/factories";
+import { render, screen } from "@/test/test-utils";
 import { UserCard } from "./UserCard";
 
 vi.mock("@tanstack/react-router", () => ({
@@ -11,15 +11,7 @@ vi.mock("@tanstack/react-router", () => ({
 	),
 }));
 
-const mockUser: UserProfile = {
-	id: 1,
-	name: "John Doe",
-	username: "johndoe",
-	email: "john@example.com",
-	phone: "1-234-567",
-	website: "johndoe.com",
-	company: { name: "Acme Inc" },
-};
+const mockUser = createMockUser();
 
 describe("UserCard", () => {
 	it("renders user information", () => {
