@@ -85,6 +85,16 @@ npm run build
 npm run preview
 ```
 
+## Phase 1 Improvements (Foundation)
+
+| ID | Category | Improvement |
+|----|----------|-------------|
+| IMP-001 | Error Handling | `ErrorBoundary` component wrapping `<Outlet />` in `__root.tsx` — prevents white-screen crashes |
+| IMP-005 | Environment | `.env.example` + runtime validation in `env.ts` — fails fast on missing required vars in production |
+| IMP-016 | DX | `typecheck`, `clean`, `preview:build` npm scripts — enables standalone type checking and CI job separation |
+| IMP-018 | Accessibility | `<label>` elements added to `LoginForm` inputs — screen reader support |
+| IMP-021 | DX | `.editorconfig` — consistent indentation, charset, and line endings across editors |
+
 ## Development Commands
 
 | Command | Description |
@@ -98,6 +108,9 @@ npm run preview
 | `npm run lint` | Lint + format check (Biome) |
 | `npm run lint:fix` | Auto-fix lint/format issues |
 | `npm run format` | Format all files |
+| `npm run typecheck` | Type-check without emitting |
+| `npm run clean` | Remove dist and temp files |
+| `npm run preview:build` | Build + preview in one step |
 
 ## React 19 Patterns Used
 
@@ -143,6 +156,8 @@ User listing and detail pages demonstrating:
 | `biome.json` | Recommended preset, tab indentation, double quotes |
 | `vitest.config.ts` | jsdom environment, globals, Testing Library setup |
 | `playwright.config.ts` | Chromium, base URL, web server auto-start |
+| `.editorconfig` | Editor-agnostic indentation, charset, line endings |
+| `.env.example` | Environment variable reference for onboarding |
 
 ## Environment Variables
 

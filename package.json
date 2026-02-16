@@ -13,7 +13,10 @@
 		"test:e2e": "playwright test",
 		"lint": "biome check .",
 		"lint:fix": "biome check --fix .",
-		"format": "biome format --fix ."
+		"format": "biome format --fix .",
+		"typecheck": "tsc -b --noEmit",
+		"clean": "rm -rf dist node_modules/.tmp",
+		"preview:build": "npm run build && npm run preview"
 	},
 	"dependencies": {
 		"@tanstack/react-query": "^5.90.21",
